@@ -1,0 +1,19 @@
+{
+  "name": "country-code-to-flag-012",
+  "version": "1.9.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Smit Dudhat",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smit901/country-code-to-flag.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Smit901/country-code-to-flag/issues"
+  },
+  "homepage": "https://github.com/Smit901/country-code-to-flag#readme",
+  "description": ""
+}
