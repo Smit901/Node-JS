@@ -22,11 +22,6 @@ var table = new Table({
   ],
 });
 
-// table is an Array, so you can `push`, `unshift`, `splice` and friends
-// table.push(["First value", "Second value"], ["First value", "Second value"]);
-
-// console.log(table.toString());
-
 const train_data = data
   .split("\n")
   .splice(1)
@@ -61,8 +56,6 @@ const train_data = data
       Destination_Station_Name,
     };
   });
-
-// console.log(train_data);
 
 const groupedData = lodash.groupBy(train_data, "Train_No");
 const trains = Object.keys(groupedData);
@@ -218,8 +211,6 @@ if (argument.length === 3 || argument.length === 5) {
         ]);
       }
       console.log(table.toString());
-      // console.table(maxStationObj);
-
       break;
     // * Done
     case "5":
@@ -240,7 +231,7 @@ if (argument.length === 3 || argument.length === 5) {
       }
       console.log(table1.toString());
       break;
-    // ! Pending
+    // * Done
     case "6":
       console.log(
         "6. Get the name of pickup point and destination point and provide possible options to travel between:"
@@ -250,18 +241,28 @@ if (argument.length === 3 || argument.length === 5) {
       for (let i = 0; i < trains.length; i++) {
         let t = [];
         for (let j = 0; j < groupedData[trains[i]].length; j++) {
-          // if (
-          //   groupedData[trains[i]][j].Station_Name === argument[3] ||
-          //   groupedData[trains[i]][j].Station_Name === argument[4]
-          // ) {
-          //   t+=1;
-          // }
           t.push(groupedData[trains[i]][j].Station_Name);
         }
         if (t.includes(argument[3]) && t.includes(argument[4])) {
-          // console.log(groupedData[trains[i]]);
+          for (let k = 0; k < groupedData[trains[i]].length; k++) {
+            table.push([
+              groupedData[trains[i]][k].Train_No,
+              groupedData[trains[i]][k].Train_Name,
+              groupedData[trains[i]][k].SEQ,
+              groupedData[trains[i]][k].Station_Code,
+              groupedData[trains[i]][k].Station_Name,
+              groupedData[trains[i]][k].Arrival_Time,
+              groupedData[trains[i]][k].Departure_Time,
+              groupedData[trains[i]][k].Distance,
+              groupedData[trains[i]][k].Source_Station,
+              groupedData[trains[i]][k].Source_Station_Name,
+              groupedData[trains[i]][k].Destination_Station,
+              groupedData[trains[i]][k].Destination_Station_Name,
+            ]);
+          }
         }
       }
+      console.log(table.toString());
 
       break;
     default:
