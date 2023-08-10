@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cli-table": "^0.3.11",
     "csv-parser": "^3.0.0",
-    "inquirer": "^9.2.10"
+    "csvtojson": "^2.0.10",
+    "inquirer": "^9.2.10",
+    "lodash": "^4.17.21"
   }
 }
