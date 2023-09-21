@@ -5,12 +5,12 @@ const friendsSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User'
 	},
-	friend_id:{
+	friend_id: [{
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User'
-	}
+	}]
 })
 
-const Friend = mongoose.model('Friend',friendsSchema);
+const Friend = mongoose.model('Friend', friendsSchema);
 
 module.exports = Friend;
