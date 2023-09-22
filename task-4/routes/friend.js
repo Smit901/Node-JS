@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-const User = require("../models/users");
-const Friend = require("../models/friends");
 const { addFriend } = require("../controller/friend");
+const asyncRouteHandler = require("../util/asyncRouteHandler");
 
 router.get('/', (req, res) => {
 	res.send({ message: "friends routes" })
 })
 
-router.post('/add', addFriend)
+router.post('/add', asyncRouteHandler(addFriend))
 
 module.exports = router;

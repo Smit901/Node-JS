@@ -4,7 +4,8 @@ require("dotenv").config();
 
 // routes
 const userRoutes = require("./routes/user")
-const friendRoutes = require('./routes/friend')
+const friendRoutes = require('./routes/friend');
+const { errorHandler } = require("./util/errorHandler");
 
 const app = express();
 
@@ -15,6 +16,7 @@ main().catch(err => console.log(err));
 app.use('/user', userRoutes);
 app.use('/friend', friendRoutes);
 
+app.use(errorHandler);
 
 async function main() {
 	await mongoose.connect(`${process.env.MONGO_URL}`);

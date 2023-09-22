@@ -5,7 +5,7 @@ const friendsSchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User'
 	},
-	friend_id: [{
+	friend_ids: [{
 		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User'
 	}]
